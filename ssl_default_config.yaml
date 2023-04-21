@@ -10,14 +10,12 @@ compute_precision:
         reduce_dtype: fp16
         buffer_dtype: fp32
     dino_head:
-      sharding_strategy: SHARD_GRAD_OP
       mixed_precision:
         param_dtype: fp16
         reduce_dtype: fp16
         buffer_dtype: fp32
     ibot_head:
       sharding_strategy: SHARD_GRAD_OP
-      mixed_precision:
         param_dtype: fp16
         reduce_dtype: fp16
         buffer_dtype: fp32
@@ -42,8 +40,6 @@ compute_precision:
         buffer_dtype: fp32
 dino:
   loss_weight: 1.0
-  head_n_prototypes: 65536
-  head_bottleneck_dim: 256
   head_nlayers: 3
   head_hidden_dim: 2048
   koleo_loss_weight: 0.1
